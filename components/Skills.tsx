@@ -6,19 +6,19 @@ import Image from "next/image";
 type Slide = { src: string; label: string; position?: string };
 
 const technical: Slide[] = [
-  { src: "/skills/tech-1.jpg", label: "At sea, Mexico",        position: "center top" },
-  { src: "/skills/tech-2.jpg", label: "Maritime engineering",   position: "center top" },
-  { src: "/skills/tech-3.jpg", label: "3D design & printing",   position: "center top" },
+  { src: "/skills/tech-1.jpg", label: "At sea, Mexico",        position: "center 20%" },
+  { src: "/skills/tech-2.jpg", label: "Maritime engineering",   position: "center 15%" },
+  { src: "/skills/tech-3.jpg", label: "3D design & printing",   position: "right 25%" },
   { src: "/skills/tech-4.jpg", label: "Offshore operations",    position: "center center" },
   { src: "/skills/tech-5.jpg", label: "Heavy manufacturing",    position: "center center" },
 ];
 
 const commercial: Slide[] = [
-  { src: "/skills/com-1.jpg", label: "Pitching to investors",  position: "center center" },
-  { src: "/skills/com-2.jpg", label: "Public speaking",         position: "center 80%" },
-  { src: "/skills/com-3.jpg", label: "Workshop facilitation",   position: "center top" },
-  { src: "/skills/com-4.jpg", label: "Consultative selling",    position: "center center" },
-  { src: "/skills/com-5.jpg", label: "€150K in sales",          position: "center top" },
+  { src: "/skills/com-1.jpg", label: "Pitching to investors",  position: "center 60%" },
+  { src: "/skills/com-2.jpg", label: "Public speaking",         position: "center 55%" },
+  { src: "/skills/com-3.jpg", label: "Workshop facilitation",   position: "left 20%" },
+  { src: "/skills/com-4.jpg", label: "Consultative selling",    position: "center 55%" },
+  { src: "/skills/com-5.jpg", label: "€150K in sales",          position: "center 15%" },
 ];
 
 function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
@@ -45,7 +45,7 @@ function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
           <div
             key={i}
             className="absolute inset-0 transition-opacity duration-700"
-            style={{ opacity: i === index ? 1 : 0 }}
+            style={{ opacity: i === index ? 1 : 0, zIndex: i === index ? 1 : 0 }}
           >
             <Image
               src={slide.src}
@@ -73,13 +73,6 @@ function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
 export default function Skills() {
   return (
     <section id="skills">
-      {/* Static header bar */}
-      <div className="bg-white py-5 flex items-center justify-center border-b border-gray-100">
-        <p className="font-medium text-[10px] tracking-[0.35em] uppercase text-gray-600 text-center">
-          Skills
-        </p>
-      </div>
-
       {/* Main block */}
       <div className="bg-[#1A4FEE] py-20 md:py-28">
         <div className="px-6 md:px-10">

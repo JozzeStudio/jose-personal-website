@@ -46,8 +46,8 @@ export default function Hero() {
         </h1>
       </div>
 
-      {/* Scroll indicator — centered at bottom, line reaches orange ticker */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center">
+      {/* Scroll indicator — left-aligned, same margin as name */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-start px-6 md:px-10">
         <p className="font-light text-white/70 text-[10px] tracking-[0.3em] uppercase mb-2">
           Scroll
         </p>

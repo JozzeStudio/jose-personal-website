@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const leftTags = ["Team Player", "Public Speaker", "Product Designer", "Marketing"];
+const leftTags = ["Team Player", "Public Speaker", "Product Designer", "Marketing", "Prototyping", "AI Skills", "Branding"];
 const rightTags = ["Photographer", "Golf", "Tennis"];
 
 export default function About() {
@@ -39,7 +39,7 @@ export default function About() {
             Builder, and Seller
           </h2>
 
-          <p className="font-light text-[15px] text-gray-500 italic leading-relaxed mb-8">
+          <p className="font-light text-[15px] text-gray-500 italic leading-relaxed mb-4">
             I combine technical design with customer&#8209;facing validation to turn commercial
             appliances into product&ndash;market fit.
           </p>
