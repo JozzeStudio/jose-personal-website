@@ -3,22 +3,22 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-type Slide = { src: string; label: string };
+type Slide = { src: string; label: string; position?: string };
 
 const technical: Slide[] = [
-  { src: "/skills/tech-1.jpg", label: "At sea, Mexico" },
-  { src: "/skills/tech-2.jpg", label: "Maritime engineering" },
-  { src: "/skills/tech-3.jpg", label: "3D design & printing" },
-  { src: "/skills/tech-4.jpg", label: "Offshore operations" },
-  { src: "/skills/tech-5.jpg", label: "Heavy manufacturing" },
+  { src: "/skills/tech-1.jpg", label: "At sea, Mexico",        position: "center top" },
+  { src: "/skills/tech-2.jpg", label: "Maritime engineering",   position: "center top" },
+  { src: "/skills/tech-3.jpg", label: "3D design & printing",   position: "center top" },
+  { src: "/skills/tech-4.jpg", label: "Offshore operations",    position: "center center" },
+  { src: "/skills/tech-5.jpg", label: "Heavy manufacturing",    position: "center center" },
 ];
 
 const commercial: Slide[] = [
-  { src: "/skills/com-1.jpg", label: "Pitching to investors" },
-  { src: "/skills/com-2.jpg", label: "Public speaking" },
-  { src: "/skills/com-3.jpg", label: "Workshop facilitation" },
-  { src: "/skills/com-4.jpg", label: "Consultative selling" },
-  { src: "/skills/com-5.jpg", label: "€150K in sales" },
+  { src: "/skills/com-1.jpg", label: "Pitching to investors",  position: "center center" },
+  { src: "/skills/com-2.jpg", label: "Public speaking",         position: "center 80%" },
+  { src: "/skills/com-3.jpg", label: "Workshop facilitation",   position: "center top" },
+  { src: "/skills/com-4.jpg", label: "Consultative selling",    position: "center center" },
+  { src: "/skills/com-5.jpg", label: "€150K in sales",          position: "center top" },
 ];
 
 function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
@@ -35,7 +35,7 @@ function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <h3 className="font-light text-[11px] tracking-[0.2em] uppercase text-white/50">
+      <h3 className="font-semibold text-[11px] tracking-[0.2em] uppercase text-white/80 text-center">
         {title}
       </h3>
 
@@ -52,16 +52,17 @@ function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
               alt={slide.label}
               fill
               className="object-cover"
+              style={{ objectPosition: slide.position ?? "center" }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         ))}
       </div>
 
-      {/* Label fades with the image */}
+      {/* Label fades with the image — orange background, same width as image */}
       <p
         key={labelKey}
-        className="text-white font-medium text-sm tracking-wide animate-fade-in"
+        className="bg-[#F5620F] text-white font-medium text-sm tracking-wide animate-fade-in text-center px-3 py-2"
       >
         {slides[index].label}
       </p>
@@ -74,7 +75,7 @@ export default function Skills() {
     <section id="skills">
       {/* Static header bar */}
       <div className="bg-white py-5 flex items-center justify-center border-b border-gray-100">
-        <p className="font-light text-[10px] tracking-[0.35em] uppercase text-gray-400 text-center">
+        <p className="font-medium text-[10px] tracking-[0.35em] uppercase text-gray-600 text-center">
           Skills
         </p>
       </div>

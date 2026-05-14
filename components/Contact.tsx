@@ -11,7 +11,7 @@ const contactItems = [
   },
   {
     label: "LinkedIn",
-    value: "/jose-c-thompson",
+    value: "Jose C. Thompson",
     href: "https://www.linkedin.com/in/jose-c-thompson/",
   },
 ];
@@ -42,7 +42,7 @@ export default function Contact() {
       <div className="px-6 md:px-10 grid md:grid-cols-2 gap-12 items-start">
         {/* Left */}
         <div>
-          <p className="font-light text-[10px] tracking-[0.25em] uppercase text-white/40 mb-6">
+          <p className="font-medium text-[10px] tracking-[0.25em] uppercase text-white/70 mb-6">
             Contact
           </p>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">

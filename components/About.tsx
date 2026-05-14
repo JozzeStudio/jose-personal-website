@@ -3,15 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const tags = [
-  "Team Player",
-  "Public Speaker",
-  "Product Designer",
-  "Marketing",
-  "Photographer",
-  "Golf",
-  "Tennis",
-];
+const leftTags = ["Team Player", "Public Speaker", "Product Designer", "Marketing"];
+const rightTags = ["Photographer", "Golf", "Tennis"];
 
 export default function About() {
   const [imageError, setImageError] = useState(false);
@@ -64,15 +57,27 @@ export default function About() {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="font-medium text-[10px] tracking-[0.1em] uppercase text-[#0a0a0a] border border-gray-300 px-3 py-1"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-2">
+            <div className="flex flex-col gap-2">
+              {leftTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="font-medium text-[10px] tracking-[0.1em] uppercase text-[#0a0a0a] border border-gray-300 px-3 py-1 hover:text-[#F5620F] hover:border-[#F5620F] transition-colors duration-200 cursor-default"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-col gap-2">
+              {rightTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="font-medium text-[10px] tracking-[0.1em] uppercase text-[#0a0a0a] border border-gray-300 px-3 py-1 hover:text-[#F5620F] hover:border-[#F5620F] transition-colors duration-200 cursor-default"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

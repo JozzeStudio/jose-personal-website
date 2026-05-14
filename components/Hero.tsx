@@ -32,8 +32,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/40" />
 
       {/* Name block */}
-      <div className="relative z-10 flex flex-col justify-end h-full px-6 md:px-10 pb-14">
-        <p className="font-light text-white/40 text-[10px] tracking-[0.3em] uppercase mb-5">
+      <div className="relative z-10 flex flex-col justify-end h-full px-6 md:px-10 pb-16">
+        <p className="font-light text-white/80 text-[10px] tracking-[0.3em] uppercase mb-5">
           Mechanical Engineer &amp; Entrepreneur
         </p>
 
@@ -44,10 +44,14 @@ export default function Hero() {
           <span className="block">Jose</span>
           <span className="block">Thompson</span>
         </h1>
+      </div>
 
-        <p className="mt-8 font-light text-white/30 text-[10px] tracking-[0.3em] uppercase">
+      {/* Scroll indicator — centered at bottom, line reaches orange ticker */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center">
+        <p className="font-light text-white/70 text-[10px] tracking-[0.3em] uppercase mb-2">
           Scroll
         </p>
+        <div className="w-px h-10 bg-white/50" />
       </div>
     </section>
   );
