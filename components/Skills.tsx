@@ -6,19 +6,28 @@ import Image from "next/image";
 type Slide = { src: string; label: string; position?: string };
 
 const technical: Slide[] = [
-  { src: "/skills/tech-1.jpg", label: "At sea, Mexico",        position: "center 20%" },
-  { src: "/skills/tech-2.jpg", label: "Maritime engineering",   position: "center 60%" },
-  { src: "/skills/tech-3.jpg", label: "3D design & printing",   position: "right 25%" },
-  { src: "/skills/tech-4.jpg", label: "Offshore operations",    position: "center center" },
-  { src: "/skills/tech-5.jpg", label: "Heavy manufacturing",    position: "center center" },
+  { src: "/skills/tech-1.jpg",  label: "At sea, Mexico",              position: "center 20%" },
+  { src: "/skills/tech-2.jpg",  label: "Maritime engineering",         position: "center 35%" },
+  { src: "/skills/tech-3.jpg",  label: "LNG breakwater repairs",      position: "center 45%" },
+  { src: "/skills/tech-4.jpg",  label: "Concrete 3D printing",        position: "center center" },
+  { src: "/skills/tech-5.jpg",  label: "Heavy manufacturing",         position: "center center" },
+  { src: "/skills/tech-6.jpg",  label: "3D printing studio",          position: "right 30%" },
+  { src: "/skills/tech-7.jpg",  label: "3D printer troubleshooting",  position: "center 35%" },
+  { src: "/skills/tech-8.jpg",  label: "SolidWorks design",           position: "center top" },
+  { src: "/skills/tech-9.jpg",  label: "Steel fabrication",           position: "center top" },
+  { src: "/skills/tech-10.jpg", label: "Field deployment",            position: "center top" },
 ];
 
 const commercial: Slide[] = [
-  { src: "/skills/com-1.jpg", label: "Pitching to investors",  position: "center 75%" },
-  { src: "/skills/com-2.jpg", label: "Public speaking",         position: "center 55%" },
-  { src: "/skills/com-3.jpg", label: "Beyond Bounds pitch",     position: "center 80%" },
-  { src: "/skills/com-4.jpg", label: "Consultative selling",    position: "center 55%" },
-  { src: "/skills/com-5.jpg", label: "€150K in sales",          position: "center 45%" },
+  { src: "/skills/com-1.jpg", label: "Pitching to investors",                    position: "center 75%" },
+  { src: "/skills/com-2.jpg", label: "Presenting at University of Amsterdam",    position: "center 35%" },
+  { src: "/skills/com-3.jpg", label: "Beyond Bounds pitch",                      position: "center 80%" },
+  { src: "/skills/com-4.jpg", label: "D·LAB panel talk",                         position: "center 72%" },
+  { src: "/skills/com-5.jpg", label: "Dutch Design Week",                        position: "center 55%" },
+  { src: "/skills/com-6.jpg", label: "€150K in sales",                           position: "center 50%" },
+  { src: "/skills/com-7.jpg", label: "Workshop facilitation",                    position: "left 25%" },
+  { src: "/skills/com-8.jpg", label: "Pitch competition win",                    position: "center 45%" },
+  { src: "/skills/com-9.jpg", label: "Consultative kitchen design",              position: "center center" },
 ];
 
 function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
@@ -29,7 +38,7 @@ function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
       setLabelKey((k) => k + 1);
-    }, 2800);
+    }, 4000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
