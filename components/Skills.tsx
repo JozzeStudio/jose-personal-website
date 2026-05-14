@@ -7,7 +7,7 @@ type Slide = { src: string; label: string; position?: string };
 
 const technical: Slide[] = [
   { src: "/skills/tech-1.jpg",  label: "At sea, Mexico",              position: "center 20%" },
-  { src: "/skills/tech-2.jpg",  label: "Maritime engineering",         position: "center 35%" },
+  { src: "/skills/tech-2.jpg",  label: "Maritime engineering",         position: "center 50%" },
   { src: "/skills/tech-3.jpg",  label: "LNG breakwater repairs",      position: "center 45%" },
   { src: "/skills/tech-4.jpg",  label: "Concrete 3D printing",        position: "center center" },
   { src: "/skills/tech-5.jpg",  label: "Heavy manufacturing",         position: "center center" },
@@ -49,7 +49,7 @@ function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
       </h3>
 
       {/* Fixed-size image area — all slides stacked, active one fades in */}
-      <div className="relative w-full aspect-[4/3] bg-white/5 overflow-hidden">
+      <div className="relative w-full aspect-[4/3.45] bg-white/5 overflow-hidden">
         {slides.map((slide, i) => (
           <div
             key={i}
