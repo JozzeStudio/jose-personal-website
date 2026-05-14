@@ -7,18 +7,18 @@ type Slide = { src: string; label: string; position?: string };
 
 const technical: Slide[] = [
   { src: "/skills/tech-1.jpg", label: "At sea, Mexico",        position: "center 20%" },
-  { src: "/skills/tech-2.jpg", label: "Maritime engineering",   position: "center 15%" },
+  { src: "/skills/tech-2.jpg", label: "Maritime engineering",   position: "center 60%" },
   { src: "/skills/tech-3.jpg", label: "3D design & printing",   position: "right 25%" },
   { src: "/skills/tech-4.jpg", label: "Offshore operations",    position: "center center" },
   { src: "/skills/tech-5.jpg", label: "Heavy manufacturing",    position: "center center" },
 ];
 
 const commercial: Slide[] = [
-  { src: "/skills/com-1.jpg", label: "Pitching to investors",  position: "center 60%" },
+  { src: "/skills/com-1.jpg", label: "Pitching to investors",  position: "center 75%" },
   { src: "/skills/com-2.jpg", label: "Public speaking",         position: "center 55%" },
-  { src: "/skills/com-3.jpg", label: "Workshop facilitation",   position: "left 20%" },
+  { src: "/skills/com-3.jpg", label: "Beyond Bounds pitch",     position: "center 80%" },
   { src: "/skills/com-4.jpg", label: "Consultative selling",    position: "center 55%" },
-  { src: "/skills/com-5.jpg", label: "€150K in sales",          position: "center 15%" },
+  { src: "/skills/com-5.jpg", label: "€150K in sales",          position: "center 45%" },
 ];
 
 function Carousel({ slides, title }: { slides: Slide[]; title: string }) {
