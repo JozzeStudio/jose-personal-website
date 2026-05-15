@@ -6,16 +6,15 @@ import Image from "next/image";
 type Slide = { src: string; label: string; position?: string };
 
 const technical: Slide[] = [
-  { src: "/skills/tech-1.jpg",  label: "At sea, Mexico",              position: "center 20%" },
-  { src: "/skills/tech-2.jpg",  label: "Maritime engineering",         position: "center 50%" },
-  { src: "/skills/tech-3.jpg",  label: "LNG breakwater repairs",      position: "center 45%" },
-  { src: "/skills/tech-4.jpg",  label: "Concrete 3D printing",        position: "center center" },
+  { src: "/skills/tech-1.jpg",  label: "At sea, Mexico",              position: "center 35%" },
+  { src: "/skills/tech-2.jpg",  label: "Maritime engineering",         position: "center 45%" },
+  { src: "/skills/tech-3.jpg",  label: "LNG breakwater repairs",      position: "center center" },
+  { src: "/skills/tech-4.jpg",  label: "Concrete 3D printing",        position: "center 60%" },
   { src: "/skills/tech-5.jpg",  label: "Heavy manufacturing",         position: "center center" },
   { src: "/skills/tech-6.jpg",  label: "3D printing studio",          position: "right 30%" },
   { src: "/skills/tech-7.jpg",  label: "3D printer troubleshooting",  position: "center 35%" },
-  { src: "/skills/tech-8.jpg",  label: "SolidWorks design",           position: "center top" },
-  { src: "/skills/tech-9.jpg",  label: "Steel fabrication",           position: "center top" },
-  { src: "/skills/tech-10.jpg", label: "Field deployment",            position: "center top" },
+  { src: "/skills/tech-9.jpg",  label: "Steel fabrication",           position: "center 10%" },
+  { src: "/skills/tech-10.jpg", label: "Field deployment",            position: "center 50%" },
 ];
 
 const commercial: Slide[] = [

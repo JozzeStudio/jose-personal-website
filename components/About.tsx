@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const leftTags = ["Team Player", "Public Speaker", "Product Designer", "Marketing", "Prototyping", "AI Skills", "Branding"];
+const leftTags = ["Team Player", "Product Designer", "Consultative Selling", "Marketing", "AI Skills", "Prototyping", "Branding"];
 const rightTags = ["Photographer", "Golf", "Tennis"];
 
 export default function About() {
