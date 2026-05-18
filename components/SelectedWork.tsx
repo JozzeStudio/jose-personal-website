@@ -1,28 +1,12 @@
+"use client";
+
+import { useLang } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
+
 const works = [
-  {
-    number: "01",
-    title: "Beyond Bounds",
-    description: "3D printing studio & innovation venture",
-    tags: ["Engineering", "Startup"],
-    href: "https://beyond-bounds.nl/",
-    external: true,
-  },
-  {
-    number: "02",
-    title: "IKEA",
-    description: "€150K+ in kitchen sales through consultative selling",
-    tags: ["Sales", "Commercial"],
-    href: null,
-    external: false,
-  },
-  {
-    number: "03",
-    title: "Serport",
-    description: "Mechanical engineer at a Mexican maritime shipyard",
-    tags: ["Engineering", "Maritime"],
-    href: "https://serport.com/",
-    external: true,
-  },
+  { number: "01", title: "Beyond Bounds", href: "https://beyond-bounds.nl/", external: true },
+  { number: "02", title: "IKEA", href: null, external: false },
+  { number: "03", title: "Serport", href: "https://serport.com/", external: true },
 ];
 
 function Arrow() {
@@ -40,20 +24,22 @@ function Arrow() {
 }
 
 export default function SelectedWork() {
+  const { lang } = useLang();
+  const t = translations[lang].work;
+
   return (
     <section id="work" className="bg-white py-20 md:py-28">
       <div className="px-6 md:px-10">
-        {/* Header row */}
         <div className="flex items-center justify-between mb-10 border-b border-gray-100 pb-4">
           <p className="text-[10px] tracking-[0.25em] uppercase text-gray-400">
-            Companies I Have Worked
+            {t.label}
           </p>
           <span className="text-[10px] text-gray-400">[{works.length}]</span>
         </div>
 
-        {/* Work rows */}
         <div>
-          {works.map((work) => {
+          {works.map((work, i) => {
+            const item = t.items[i];
             const inner = (
               <div className="group flex items-center justify-between py-6 border-b border-gray-100 cursor-pointer">
                 <div className="flex items-start gap-6 md:gap-10">
@@ -64,12 +50,12 @@ export default function SelectedWork() {
                     <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-[#0a0a0a] group-hover:text-[#1A4FEE] transition-colors">
                       {work.title}
                     </h3>
-                    <p className="text-sm text-gray-400 mt-0.5">{work.description}</p>
+                    <p className="text-sm text-gray-400 mt-0.5">{item.description}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 md:gap-8 ml-4">
                   <div className="hidden md:flex gap-2">
-                    {work.tags.map((tag) => (
+                    {item.tags.map((tag) => (
                       <span
                         key={tag}
                         className="text-[10px] tracking-[0.12em] uppercase text-gray-400 bg-gray-50 px-2 py-1"
@@ -86,18 +72,11 @@ export default function SelectedWork() {
             if (!work.href) return <div key={work.number}>{inner}</div>;
 
             return work.external ? (
-              <a
-                key={work.number}
-                href={work.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a key={work.number} href={work.href} target="_blank" rel="noopener noreferrer">
                 {inner}
               </a>
             ) : (
-              <a key={work.number} href={work.href}>
-                {inner}
-              </a>
+              <a key={work.number} href={work.href}>{inner}</a>
             );
           })}
         </div>

@@ -2,21 +2,24 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useLang } from "@/contexts/LanguageContext";
+import { translations } from "@/locales/translations";
 
 export default function Hero() {
+  const { lang } = useLang();
+  const t = translations[lang].hero;
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
   return (
     <section className="relative h-screen bg-[#0a0a0a] flex flex-col overflow-hidden">
-      {/* Speech photo background — shown only if it loads */}
       {!imageError && (
         <div
           className="absolute inset-0 transition-opacity duration-700"
           style={{ opacity: imageLoaded ? 1 : 0 }}
         >
           <Image
-            src="/jose-speech.jpg"
+            src="/images/jose-speech.jpg"
             alt=""
             fill
             priority
@@ -28,13 +31,11 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Dark overlay — always present, ensures legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/40" />
 
-      {/* Name block */}
       <div className="relative z-10 flex flex-col justify-end h-full px-6 md:px-10 pb-16">
         <p className="font-light text-white/80 text-[10px] tracking-[0.3em] uppercase mb-5">
-          Mechanical Engineer &amp; Entrepreneur
+          {t.tagline}
         </p>
 
         <h1
@@ -46,10 +47,9 @@ export default function Hero() {
         </h1>
       </div>
 
-      {/* Scroll indicator — left-aligned, same margin as name */}
       <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-start px-6 md:px-10">
         <p className="font-light text-white/70 text-[10px] tracking-[0.3em] uppercase mb-2">
-          Scroll
+          {t.scroll}
         </p>
         <div className="w-px h-10 bg-white/50" />
       </div>
