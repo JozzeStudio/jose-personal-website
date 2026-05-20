@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-export type Lang = "en" | "nl" | "es";
+export type Lang = "en" | "nl" | "es" | "ja";
 
 type LangCtx = { lang: Lang; setLang: (l: Lang) => void };
 const LanguageContext = createContext<LangCtx>({ lang: "en", setLang: () => {} });
@@ -12,7 +12,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("site-lang") as Lang | null;
-    if (stored && ["en", "nl", "es"].includes(stored)) setLangState(stored);
+    if (stored && ["en", "nl", "es", "ja"].includes(stored)) setLangState(stored);
   }, []);
 
   const setLang = (l: Lang) => {

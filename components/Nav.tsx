@@ -8,6 +8,7 @@ const LANGUAGES: { code: Lang; label: string }[] = [
   { code: "en", label: "English" },
   { code: "nl", label: "Nederlands" },
   { code: "es", label: "Español" },
+  { code: "ja", label: "日本語" },
 ];
 
 export default function Nav() {
